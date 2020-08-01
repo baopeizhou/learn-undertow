@@ -54,7 +54,7 @@ spring:
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
 mybatis:
-  mapper-locations: classpath:mybatis/mappers/*.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
 logging:
   level:
     root: info
