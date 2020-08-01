@@ -9,6 +9,8 @@ server:
       enabled: true
       rotate: true
     buffer-size: 10240
+    io-threads: 4
+    worker-threads: 256
   servlet:
     context-path: /undertow
 spring:
@@ -19,6 +21,14 @@ spring:
     port: 6379
     password: Mm_1989321
     timeout: 5s
+    password: Mm_1989321
+    timeout: 5s
+    cluster:
+      nodes:
+        - 172.28.51.59:6379
+        - 172.28.51.66:6379
+        - 172.28.51.186:6379
+      max-redirects: 5
     lettuce:
       pool:
         min-idle: 1
@@ -28,6 +38,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/world?serverTimezone=UTC
+    url: jdbc:mysql://172.28.51.59:3306/learn
     username: learn
     password: Mm_1989321
     type: com.zaxxer.hikari.HikariDataSource
@@ -83,4 +94,3 @@ management:
     web:
       exposure:
         include: beans,prometheus,health,httptrace,info,loggers,metrics,threaddump
-
